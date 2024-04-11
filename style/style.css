@@ -130,6 +130,7 @@ body {
 }
 
 .form-section {
+  animation: slideIn 0.2s ease-in-out forwards;
   background-color: #fff;
   padding: 2rem 2rem;
   display: flex;
@@ -616,6 +617,8 @@ body {
     gap: 1rem;
     bottom: -15rem;
     width: 70svw;
+    animation: slide-in 1s ease-in forwards;
+    animation-timeline: view();
   }
   .form-section.form-section > .item {
     padding: 15px 15px;
@@ -978,5 +981,13 @@ body {
   .instagram-section .img-3,
   .instagram-section .img-2 {
     display: none;
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -127,6 +127,7 @@ body {
 }
 
 .form-section {
+  animation: slideIn .2s ease-in-out forwards;
   background-color: #fff;
   padding: 2rem 2rem;
   @include flex-center(row, 2rem, center);
@@ -557,6 +558,8 @@ body {
     @include flex-center(column, 1rem, center);
     bottom: -15rem;
     width: 70svw;
+    animation: slide-in 1s ease-in forwards;
+    animation-timeline: view();
 
     &.form-section > .item {
       @include custom-button(15px 15px, black, #f8f9fa);
@@ -787,15 +790,12 @@ body {
 
   // insta section
 
-  
-
   .instagram-section {
-
     &.instagram-section .images-section {
-    &.images-section .img {
-      width: 50%;
+      &.images-section .img {
+        width: 50%;
+      }
     }
-  }
     // image section
     &.instagram-section .images-section .img-4,
     .img-3,
@@ -805,40 +805,40 @@ body {
   }
 
   .footer {
-  padding: 5rem 3rem;
-  &.footer .section-1 {
-    flex-wrap: wrap;
-
-    &.section-1 .part{
-      margin-right: 2rem;
-    }
-
-    &.section-1 .part-4 > .part-5 {
-      @include flex-center(column, 1rem, center);
-      align-items: flex-start;
+    padding: 5rem 3rem;
+    &.footer .section-1 {
       flex-wrap: wrap;
-      margin-right: 0;
-      
-      &.part-5 .icons {
-        @include flex-center(row, 2px, center);
-        flex-wrap: wrap;
+
+      &.section-1 .part {
+        margin-right: 2rem;
       }
 
-      &.part-5 .icons > .img {
-        height: 25px;
-        width: 25px;
-        background-color: #00917c;
-        border-radius: 50%;
-        @include flex-center(row, 2px, center);
+      &.section-1 .part-4 > .part-5 {
+        @include flex-center(column, 1rem, center);
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-right: 0;
 
-        &.img img {
-          height: 12px;
-          width: 12px;
+        &.part-5 .icons {
+          @include flex-center(row, 2px, center);
+          flex-wrap: wrap;
+        }
+
+        &.part-5 .icons > .img {
+          height: 25px;
+          width: 25px;
+          background-color: #00917c;
+          border-radius: 50%;
+          @include flex-center(row, 2px, center);
+
+          &.img img {
+            height: 12px;
+            width: 12px;
+          }
         }
       }
     }
   }
-}
 }
 
 // responsiveness
@@ -914,7 +914,7 @@ body {
     }
   }
 
-  .testimonial-section{
+  .testimonial-section {
     padding: 0 1rem 5rem;
   }
 
@@ -932,14 +932,14 @@ body {
 
   // insta section
   .instagram-section {
-    &.instagram-section .title{
+    &.instagram-section .title {
       padding: 0 1rem 5rem;
     }
     &.instagram-section .images-section {
-    &.images-section .img {
-      width: 100% ;
+      &.images-section .img {
+        width: 100%;
+      }
     }
-  }
     // image section
     &.instagram-section .images-section .img-4,
     .img-3,
@@ -947,55 +947,41 @@ body {
       display: none;
     }
   }
+}
 
-//   .footer {
-//   &.footer .section-1 {
-//     @include flex-center(column, 3rem, center);
-//     align-items: center;
-//     width: 100%;
+// animation
 
-//     &.section-1 > .part {
-//       width: 25%;
+// :root {
+//   --animation-trigger: 0;
+// }
 
-//       &.part > p {
-//         margin-bottom: 10px;
-//         color: rgba(0, 0, 0, 0.5);
-//         font-size: 14px;
-//       }
-//     }
-
-//     &.section-1 > .part > .first {
-//       color: #000 !important;
-//       font-size: 1rem;
-//       font-family: "Work Sans", sans-serif;
-//     }
-
-//     &.section-1 .part-4 > .part-5 {
-//       @include flex-center(column, 1rem, center);
-//       align-items: flex-start;
-
-//       &.part-5 .icons {
-//         @include flex-center(row, 2px, center);
-//       }
-
-//       &.part-5 .icons > .img {
-//         height: 25px;
-//         width: 25px;
-//         background-color: #00917c;
-//         border-radius: 50%;
-//         @include flex-center(row, 2px, center);
-
-//         &.img img {
-//           height: 12px;
-//           width: 12px;
-//         }
-//       }
-//     }
+// @keyframes slideIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(50px);
 //   }
-
-//   &.footer .section-2 {
-//     font-size: 12px;
-//     color: rgba(0, 0, 0, 0.5);
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
 //   }
 // }
-}
+
+// .animate {
+//   animation: slideIn 0.5s ease forwards;
+// }
+
+// .trigger-animation {
+//   visibility: hidden;
+//   position: absolute;
+//   top: 50px; /* Adjust as needed */
+// }
+
+
+// @keyframes slide-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
